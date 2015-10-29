@@ -1,6 +1,13 @@
-<FORM method="post" action="__URL__/update">
-    标题:<INPUT type="text" name="data" value="{$vo.data}"><br/>
+<!--<layout name="layout" />-->
+<form method="post" action="__URL__/update">
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">任务名称:</span>
+        <input type="text" name="data" class="form-control" aria-describedby="basic-addon1" value="{$vo.data}"><br/>
+
+        <input type="hidden" name="id" value="{$vo.id}">
+
+    </div>
+    <input type="submit" class="button btn-primary button-full" value="提交">
     <!--内容:<TEXTAREA name="content" rows="5" cols="45">{$vo.content}</TEXTAREA><br/> -->
-    <INPUT type="hidden" name="id" value="{$vo.id}">
-    <INPUT type="submit" value="提交">
-</FORM>
+
+</form>

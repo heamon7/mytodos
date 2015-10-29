@@ -1,13 +1,18 @@
-￼<html>
-<head>
-    <title>think</title>
-</head>
-<body>
-<h1>All lists:</h1>
-<volist name="list" id="vo">
-    <a href="{:U('edit',array('id'=>$vo['id']))}" class="success button">{$vo.id}:{$vo.data}</a></br>
-</volist>
-<a href="{:U('create')}" class="success button">Create new List</a>
-</body>
-</html>
 
+<div class="main-content">
+<h1>All Todo Lists</h1>
+<ol class="list-group">
+    <volist name="lists" id="vo" key="k"  empty="暂时没有task">
+        <li class="list-group-item">{$k}. <a href="{:U('edit',array('id'=>$vo['id']))}" >{$vo.data}</a>
+
+            <a href="{:U('delete',array('id'=>$vo['id']))}" task-id="{$vo.id}" class="delete-task"><button class="btn-danger button" style="float:right">delete</button></a>
+        <a href="{:U('edit',array('id'=>$vo['id']))}" ><button class="btn-info button" style="float:right;margin-right:10px;">edit</button></a></li></br>
+    </volist>
+</ol>
+
+<a href="{:U('create')}" ><button class="btn-primary button button-full">Create new task</button></a>
+<input type="hidden" name="is_ajax" value="{$is_ajax}">
+<!--<script type="text/javascript">-->
+<!--</script>-->
+
+</div>
