@@ -1,0 +1,13 @@
+￼<html>
+<head>
+    <title>think</title>
+</head>
+<body>
+<h1>All lists:</h1>
+<volist name="list" id="vo">
+    <a href="{:U('edit',array('id'=>$vo['id']))}" class="success button">{$vo.id}:{$vo.data}</a></br>
+</volist>
+<a href="{:U('create')}" class="success button">Create new List</a>
+</body>
+</html>
+
